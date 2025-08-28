@@ -13,12 +13,12 @@ dependencies = [
     "flatbuffers>=24.3.25",
     "flax==0.10.2",
     "fsspec[gcs]>=2024.6.0",
-    "gym-aloha>=0.1.1",
+    # "gym-aloha>=0.1.1",
     "imageio>=2.36.1",
     "jax[cuda12]==0.5.3",
     "jaxtyping==0.2.36",
     "lerobot",
-    "ml_collections==1.0.0",
+    "ml-collections==1.0.0",
     "numpy>=1.22.4,<2.0.0",
     "numpydantic>=1.6.6",
     "opencv-python>=4.10.0.84",
@@ -40,6 +40,28 @@ dependencies = [
     "transformers==4.48.1",
     "rich>=14.0.0",
     "polars>=1.30.0",
+    "robosuite",
+    "robosuite_task_zoo",
+    "robomimic",
+    "mimicgen",
+    "gymnasium>=1.2.0",
+    "h5py>=3.14.0",
+    "matplotlib>=3.10.3",
+    "mediapy>=1.2.4",
+    "optax>=0.2.4",
+    "orbax>=0.1.9",
+    "tensorflow>=2.18.1",
+    "tensorflow-datasets>=4.9.9",
+    "tensorflow-probability>=0.25.0",
+    "tqdm>=4.67.1",
+    "tree>=0.2.4",
+    "hidapi>=0.14.0.post4",
+    "mink>=0.0.11",
+    "robosuite-models==1.0.0",
+    "usd-core>=25.5.1",
+    "datasets==3.6.0",
+    "huggingface-hub>=0.29,<0.30",
+    "imgaug",
 ]
 
 
@@ -57,10 +79,19 @@ dev = [
     "pynvml>=12.0.0",
 ]
 
+# you need to locally clone robosuite and lerobot
+# lerobot needs to be this commit 0cf864870cf29f4738d3ade893e6fd13fbd7cdb5
+# robosuite is 1.5.10in my current version
+# also you need to adjust the path below here
 
 [tool.uv.sources]
+robosuite = { path = "../robosuite", editable = true }
+mimicgen = { path = "../mimicgen", editable = true }
+robomimic = { path = "../robomimic", editable = true }
+robosuite_task_zoo = { path = "../robosuite-task-zoo", editable = true }
+lerobot = { path = "../lerobot", editable = true }
 openpi-client = { workspace = true }
-lerobot = { git = "https://github.com/huggingface/lerobot", rev = "0cf864870cf29f4738d3ade893e6fd13fbd7cdb5" }
+imgaug = { git = "https://github.com/aleju/imgaug.git" }
 
 [tool.uv.workspace]
 members = ["packages/*"]
