@@ -86,14 +86,8 @@ dev = [
 # also you need to adjust the path below here
 
 [tool.uv.sources]
-robosuite = { path = "../robosuite", editable = true }
-mimicgen = { path = "../mimicgen", editable = true }
-robomimic = { path = "../robomimic", editable = true }
-metrx = { path = "../metrx", editable = true }
-robosuite_task_zoo = { path = "../robosuite-task-zoo", editable = true }
-lerobot = { path = "../lerobot", editable = true }
+lerobot = {git = "https://github.com/huggingface/lerobot.git" , rev = "0cf864870cf29f4738d3ade893e6fd13fbd7cdb5"}
 openpi-client = { workspace = true }
-imgaug = { git = "https://github.com/aleju/imgaug.git" }
 
 [tool.uv.workspace]
 members = [
