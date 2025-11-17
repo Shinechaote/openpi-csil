@@ -40,13 +40,8 @@ dependencies = [
     "transformers==4.48.1",
     "rich>=14.0.0",
     "polars>=1.30.0",
-    "robosuite",
-    "robosuite_task_zoo",
-    "robomimic",
-    "mimicgen",
     "gymnasium>=1.2.0",
     "h5py>=3.14.0",
-    "matplotlib>=3.10.3",
     "mediapy>=1.2.4",
     "optax>=0.2.4",
     "orbax>=0.1.9",
@@ -62,6 +57,13 @@ dependencies = [
     "datasets==3.6.0",
     "huggingface-hub>=0.29,<0.30",
     "imgaug",
+    "tf-keras>=2.18.0",
+    "metrx",
+    "umap-learn>=0.5.9.post2",
+    "scienceplots>=2.1.1",
+    "tikzplotlib>=0.10.1",
+    "matplotlib==3.5",
+    "webcolors<24.6.0",
 ]
 
 
@@ -75,7 +77,6 @@ dev = [
     "pre-commit>=4.0.1",
     "ipykernel>=6.29.5",
     "ipywidgets>=8.1.5",
-    "matplotlib>=3.10.0",
     "pynvml>=12.0.0",
 ]
 
@@ -88,13 +89,18 @@ dev = [
 robosuite = { path = "../robosuite", editable = true }
 mimicgen = { path = "../mimicgen", editable = true }
 robomimic = { path = "../robomimic", editable = true }
+metrx = { path = "../metrx", editable = true }
 robosuite_task_zoo = { path = "../robosuite-task-zoo", editable = true }
 lerobot = { path = "../lerobot", editable = true }
 openpi-client = { workspace = true }
 imgaug = { git = "https://github.com/aleju/imgaug.git" }
 
 [tool.uv.workspace]
-members = ["packages/*"]
+members = [
+    "packages/*",
+    "csil",
+    ".",
+]
 
 [tool.ruff]
 line-length = 120
